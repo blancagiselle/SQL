@@ -1,0 +1,23 @@
+#First looking at the overall data and its components
+
+SELECT *
+FROM superstore
+ORDER BY price asc;
+
+#Finding how many items we have in total across all categories
+
+select sum(stock_quantity)
+from superstore;
+
+#finding the average price on the category kitchen supplies
+
+SELECT avg(price), category
+FROM superstore
+WHERE category= "Kitchen Supplies";
+
+#Looking at the items that we have the most in stock and their average rating
+
+SELECT item_name, stock_quantity, average_rating
+FROM superstore
+ORDER BY stock_quantity desc
+LIMIT 3;
